@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service/">
+
+<xs:element name="count" type="tns:count"/>
+
+<xs:element name="countResponse" type="tns:countResponse"/>
+
+<xs:element name="create" type="tns:create"/>
+
+<xs:element name="createResponse" type="tns:createResponse"/>
+
+<xs:element name="edit" type="tns:edit"/>
+
+<xs:element name="editResponse" type="tns:editResponse"/>
+
+<xs:element name="find" type="tns:find"/>
+
+<xs:element name="findAll" type="tns:findAll"/>
+
+<xs:element name="findAllResponse" type="tns:findAllResponse"/>
+
+<xs:element name="findRange" type="tns:findRange"/>
+
+<xs:element name="findRangeResponse" type="tns:findRangeResponse"/>
+
+<xs:element name="findResponse" type="tns:findResponse"/>
+
+<xs:element name="producto" type="tns:producto"/>
+
+<xs:element name="remove" type="tns:remove"/>
+
+<xs:element name="removeResponse" type="tns:removeResponse"/>
+
+<xs:element name="subtipoProducto" type="tns:subtipoProducto"/>
+
+<xs:element name="tipoProducto" type="tns:tipoProducto"/>
+
+<xs:complexType name="findRange">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="anioF" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="anioV" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="descripcionProducto" type="xs:string" minOccurs="0"/>
+<xs:element name="idProducto" type="xs:short" minOccurs="0"/>
+<xs:element name="nombreProducto" type="xs:string" minOccurs="0"/>
+<xs:element name="precioProducto" type="xs:int"/>
+<xs:element name="subtipoProducto" type="tns:subtipoProducto" minOccurs="0"/>
+<xs:element name="tarificacion" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="subtipoProducto">
+<xs:sequence>
+<xs:element name="descripcionStp" type="xs:string" minOccurs="0"/>
+<xs:element name="subtipoProductoPK" type="tns:subtipoProductoPK" minOccurs="0"/>
+<xs:element name="tipoProducto" type="tns:tipoProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="subtipoProductoPK">
+<xs:sequence>
+<xs:element name="subtipoP" type="xs:short"/>
+<xs:element name="tipoProductoIdTp" type="xs:short"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoProducto">
+<xs:sequence>
+<xs:element name="descripcionTp" type="xs:string" minOccurs="0"/>
+<xs:element name="idTp" type="xs:short" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="edit">
+<xs:sequence>
+<xs:element name="entity" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="remove">
+<xs:sequence>
+<xs:element name="entity" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="find">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="create">
+<xs:sequence>
+<xs:element name="entity" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="count">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

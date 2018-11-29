@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WSAlimentos/WSCliente?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSCliente.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSCliente?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSCliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSBoleta?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSBoleta.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSBoleta?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSBoleta.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSDetalle?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSDetalle.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSDetalle?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSDetalle.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSEstadoCivil?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSEstadoCivil.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSEstadoCivil?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSEstadoCivil.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSProducto?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSProducto.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSProducto?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSSubTipo.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSSubTipo.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSTipo?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSTipo.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSTipo?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSTipo.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSVentas?wsdl" uri="wsdl/localhost_8080/WSAlimentos/WSVentas.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSVentas?xsd=1" uri="wsdl/localhost_8080/WSAlimentos/WSVentas.xsd_1.xsd"/>
+</catalog>
