@@ -26,38 +26,38 @@ public class WSBoleta {
     private BoletaFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") Boleta entity) {
+    @WebMethod(operationName = "createBoleta")
+    public boolean createBoleta(@WebParam(name = "entity") Boleta entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") Boleta entity) {
+    @WebMethod(operationName = "editBoleta")
+    public boolean editBoleta(@WebParam(name = "entity") Boleta entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") Boleta entity) {
+    @WebMethod(operationName = "removeBoleta")
+    public boolean removeBoleta(@WebParam(name = "entity") Boleta entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
+    @WebMethod(operationName = "findBoleta")
     public Boleta findBoleta(@WebParam(name = "id") int id) {
         return ejbRef.findBoleta(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<Boleta> findAll() {
+    @WebMethod(operationName = "findAllBoleta")
+    public List<Boleta> findAllBoleta() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<Boleta> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeBoleta")
+    public List<Boleta> findRangeBoleta(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
-    @WebMethod(operationName = "count")
-    public int count() {
+    @WebMethod(operationName = "countBoleta")
+    public int countBoleta() {
         return ejbRef.count();
     }
 

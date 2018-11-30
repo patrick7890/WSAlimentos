@@ -26,38 +26,38 @@ public class WSSubTipo {
     private SubtipoProductoFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") SubtipoProducto entity) {
+    @WebMethod(operationName = "createSubTipo")
+    public boolean createSubTipo(@WebParam(name = "entity") SubtipoProducto entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") SubtipoProducto entity) {
+    @WebMethod(operationName = "edioSubTipo")
+    public boolean edioSubTipo(@WebParam(name = "entity") SubtipoProducto entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") SubtipoProducto entity) {
+    @WebMethod(operationName = "removoSubTipo")
+    public boolean removoSubTipo(@WebParam(name = "entity") SubtipoProducto entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
+    @WebMethod(operationName = "findSubtipoProducto")
     public SubtipoProducto findSubtipoProducto(@WebParam(name = "id") int id) {
-        return ejbRef.findSubtipoProducto(id);
+        return ejbRef.findSubtipo(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<SubtipoProducto> findAll() {
+    @WebMethod(operationName = "findAllSubTipo")
+    public List<SubtipoProducto> findAllSubTipo() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<SubtipoProducto> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeSubTipo")
+    public List<SubtipoProducto> findRangeSubTipo(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
-    @WebMethod(operationName = "count")
-    public int count() {
+    @WebMethod(operationName = "countSubTipo")
+    public int countSubTipo() {
         return ejbRef.count();
     }
 

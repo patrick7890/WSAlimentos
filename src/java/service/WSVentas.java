@@ -24,38 +24,38 @@ public class WSVentas {
     private VentasFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") Ventas entity) {
+    @WebMethod(operationName = "createVentas")
+    public boolean createVentas(@WebParam(name = "entity") Ventas entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") Ventas entity) {
+    @WebMethod(operationName = "editVentas")
+    public boolean editVentas(@WebParam(name = "entity") Ventas entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") Ventas entity) {
+    @WebMethod(operationName = "removeVentas")
+    public boolean removeVentas(@WebParam(name = "entity") Ventas entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
+    @WebMethod(operationName = "findVentas")
     public Ventas findVentas(@WebParam(name = "id") int id) {
         return ejbRef.findVentas(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<Ventas> findAll() {
+    @WebMethod(operationName = "findAllVentas")
+    public List<Ventas> findAllVentas() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<Ventas> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeVentas")
+    public List<Ventas> findRangeVentas(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
     @WebMethod(operationName = "count")
-    public int count() {
+    public int countVentas() {
         return ejbRef.count();
     }
 }

@@ -26,38 +26,38 @@ public class WSEstadoCivil {
     private EstadoCivilFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") EstadoCivil entity) {
+    @WebMethod(operationName = "createEstadoCivil")
+    public boolean createEstadoCivil(@WebParam(name = "entity") EstadoCivil entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") EstadoCivil entity) {
+    @WebMethod(operationName = "editEstadoCivil")
+    public boolean editEstadoCivil(@WebParam(name = "entity") EstadoCivil entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") EstadoCivil entity) {
+    @WebMethod(operationName = "removeEstadoCivil")
+    public boolean removeEstadoCivil(@WebParam(name = "entity") EstadoCivil entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
+    @WebMethod(operationName = "findEstadoCivil")
     public EstadoCivil findEstadoCivil(@WebParam(name = "id") int id) {
         return ejbRef.findEstadoCivil(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<EstadoCivil> findAll() {
+    @WebMethod(operationName = "findAllEstadoCivil")
+    public List<EstadoCivil> findAllEstadoCivil() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<EstadoCivil> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeEstadoCivil")
+    public List<EstadoCivil> findRangeEstadoCivil(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
-    @WebMethod(operationName = "count")
-    public int count() {
+    @WebMethod(operationName = "countEstadoCivil")
+    public int countEstadoCivil() {
         return ejbRef.count();
     }
 

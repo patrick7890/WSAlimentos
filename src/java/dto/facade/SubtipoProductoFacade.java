@@ -29,7 +29,7 @@ public class SubtipoProductoFacade extends AbstractFacade<SubtipoProducto> {
     public SubtipoProductoFacade() {
         super(SubtipoProducto.class);
     }
-    public SubtipoProducto findSubtipoProducto(int id) {
+    public SubtipoProducto findSubtipo(int id) {
         Query q = em.createNamedQuery("SubtipoProducto.findBySubtipoP");
         q.setParameter("subtipoP", id);
         return (SubtipoProducto) q.getSingleResult();

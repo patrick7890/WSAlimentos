@@ -10,10 +10,10 @@
     <system systemId="http://localhost:8080/WSAlimentos/WSEstadoCivil?xsd=1" uri="src/conf/xml-resources/web-service-references/WSEstadoCivil/wsdl/localhost_8080/WSAlimentos/WSEstadoCivil.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSProducto?wsdl" uri="src/conf/xml-resources/web-service-references/WSProducto/wsdl/localhost_8080/WSAlimentos/WSProducto.wsdl"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/WSProducto/wsdl/localhost_8080/WSAlimentos/WSProducto.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?wsdl" uri="src/conf/xml-resources/web-service-references/WSSubTipo/wsdl/localhost_8080/WSAlimentos/WSSubTipo.wsdl"/>
-    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?xsd=1" uri="src/conf/xml-resources/web-service-references/WSSubTipo/wsdl/localhost_8080/WSAlimentos/WSSubTipo.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSTipo?wsdl" uri="src/conf/xml-resources/web-service-references/WSTipo/wsdl/localhost_8080/WSAlimentos/WSTipo.wsdl"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSTipo?xsd=1" uri="src/conf/xml-resources/web-service-references/WSTipo/wsdl/localhost_8080/WSAlimentos/WSTipo.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSVentas?wsdl" uri="src/conf/xml-resources/web-service-references/WSVentas/wsdl/localhost_8080/WSAlimentos/WSVentas.wsdl"/>
     <system systemId="http://localhost:8080/WSAlimentos/WSVentas?xsd=1" uri="src/conf/xml-resources/web-service-references/WSVentas/wsdl/localhost_8080/WSAlimentos/WSVentas.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?wsdl" uri="src/conf/xml-resources/web-service-references/WSSubTipo/wsdl/localhost_8080/WSAlimentos/WSSubTipo.wsdl"/>
+    <system systemId="http://localhost:8080/WSAlimentos/WSSubTipo?xsd=1" uri="src/conf/xml-resources/web-service-references/WSSubTipo/wsdl/localhost_8080/WSAlimentos/WSSubTipo.xsd_1.xsd"/>
 </catalog>

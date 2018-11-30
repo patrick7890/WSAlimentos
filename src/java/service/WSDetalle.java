@@ -26,38 +26,38 @@ public class WSDetalle {
     private DetalleFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") Detalle entity) {
+    @WebMethod(operationName = "createDetalle")
+    public boolean createDetalle(@WebParam(name = "entity") Detalle entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") Detalle entity) {
+    @WebMethod(operationName = "editDetalle")
+    public boolean editDetalle(@WebParam(name = "entity") Detalle entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") Detalle entity) {
+    @WebMethod(operationName = "removeDetalle")
+    public boolean removeDetalle(@WebParam(name = "entity") Detalle entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
+    @WebMethod(operationName = "findDetalle")
     public Detalle findDetalle(@WebParam(name = "id") int id) {
         return ejbRef.findDetalle(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<Detalle> findAll() {
+    @WebMethod(operationName = "findAllDetalle")
+    public List<Detalle> findAllDetalle() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<Detalle> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeDetalle")
+    public List<Detalle> findRangeDetalle(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
-    @WebMethod(operationName = "count")
-    public int count() {
+    @WebMethod(operationName = "countDetalle")
+    public int countDetalle() {
         return ejbRef.count();
     }
     

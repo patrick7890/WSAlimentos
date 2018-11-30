@@ -24,38 +24,38 @@ public class WSCliente {
     private ClienteFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
-    @WebMethod(operationName = "create")
-    public boolean create(@WebParam(name = "entity") Cliente entity) {
+    @WebMethod(operationName = "createCliente")
+    public boolean createCliente(@WebParam(name = "entity") Cliente entity) {
         return ejbRef.create(entity);
     }
 
-    @WebMethod(operationName = "edit")
-    public boolean edit(@WebParam(name = "entity") Cliente entity) {
+    @WebMethod(operationName = "editCliente")
+    public boolean editCliente(@WebParam(name = "entity") Cliente entity) {
         return ejbRef.edit(entity);
     }
 
-    @WebMethod(operationName = "remove")
-    public boolean remove(@WebParam(name = "entity") Cliente entity) {
+    @WebMethod(operationName = "removeCliente")
+    public boolean removeCliente(@WebParam(name = "entity") Cliente entity) {
         return ejbRef.remove(entity);
     }
 
-    @WebMethod(operationName = "find")
-    public Cliente find(@WebParam(name = "id") int id) {
+    @WebMethod(operationName = "findCliente")
+    public Cliente findCliente(@WebParam(name = "id") int id) {
         return ejbRef.findCliente(id);
     }
 
-    @WebMethod(operationName = "findAll")
-    public List<Cliente> findAll() {
+    @WebMethod(operationName = "findAllCliente")
+    public List<Cliente> findAllCliente() {
         return ejbRef.findAll();
     }
 
-    @WebMethod(operationName = "findRange")
-    public List<Cliente> findRange(@WebParam(name = "range") int[] range) {
+    @WebMethod(operationName = "findRangeCliente")
+    public List<Cliente> findRangeCliente(@WebParam(name = "range") int[] range) {
         return ejbRef.findRange(range);
     }
 
-    @WebMethod(operationName = "count")
-    public int count() {
+    @WebMethod(operationName = "countCliente")
+    public int countCliente() {
         return ejbRef.count();
     }
     
