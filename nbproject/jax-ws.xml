@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="WSCliente">
-      <implementation-class>service.WSCliente</implementation-class>
+    <service name="WSEstadoCivil">
+      <implementation-class>service.WSEstadoCivil</implementation-class>
     </service>
     <service name="WSBoleta">
       <implementation-class>service.WSBoleta</implementation-class>
     </service>
-    <service name="WSDetalle">
-      <implementation-class>service.WSDetalle</implementation-class>
-    </service>
-    <service name="WSEstadoCivil">
-      <implementation-class>service.WSEstadoCivil</implementation-class>
+    <service name="WSCliente">
+      <implementation-class>service.WSCliente</implementation-class>
     </service>
     <service name="WSProducto">
       <implementation-class>service.WSProducto</implementation-class>
     </service>
-    <service name="WSSubTipo">
-      <implementation-class>service.WSSubTipo</implementation-class>
-    </service>
     <service name="WSTipo">
       <implementation-class>service.WSTipo</implementation-class>
     </service>
+    <service name="WSSubTipo">
+      <implementation-class>service.WSSubTipo</implementation-class>
+    </service>
     <service name="WSVentas">
       <implementation-class>service.WSVentas</implementation-class>
+    </service>
+    <service name="WSDetalle">
+      <implementation-class>service.WSDetalle</implementation-class>
     </service>
   </services>
   <clients>
