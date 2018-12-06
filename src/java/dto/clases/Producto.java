@@ -7,7 +7,9 @@ package dto.clases;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,12 +20,14 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -42,6 +46,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Producto.findByDescripcionProducto", query = "SELECT p FROM Producto p WHERE p.descripcionProducto = :descripcionProducto")
     , @NamedQuery(name = "Producto.findByTarificacion", query = "SELECT p FROM Producto p WHERE p.tarificacion = :tarificacion")})
 public class Producto implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoIdProducto")
+    private List<Detalle> detalleList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -175,6 +182,15 @@ public class Producto implements Serializable {
     @Override
     public String toString() {
         return "dto.clases.Producto[ idProducto=" + idProducto + " ]";
+    }
+
+    @XmlTransient
+    public List<Detalle> getDetalleList() {
+        return detalleList;
+    }
+
+    public void setDetalleList(List<Detalle> detalleList) {
+        this.detalleList = detalleList;
     }
     
 }

@@ -36,12 +36,13 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c")
     , @NamedQuery(name = "Cliente.findByIdCliente", query = "SELECT c FROM Cliente c WHERE c.idCliente = :idCliente")
     , @NamedQuery(name = "Cliente.findByRut", query = "SELECT c FROM Cliente c WHERE c.rut = :rut")
-    , @NamedQuery(name = "Cliente.findByDv", query = "SELECT c FROM Cliente c WHERE c.dv = :dv")
+    , @NamedQuery(name = "Cliente.findByDv", query = "SELECT c FROM Cliente c WHERE  c.dv = :dv")
+    , @NamedQuery(name = "Cliente.findByRutDv", query = "SELECT c FROM Cliente c WHERE c.rut = :rut and c.dv = :dv")
     , @NamedQuery(name = "Cliente.findByNombreCliente", query = "SELECT c FROM Cliente c WHERE c.nombreCliente = :nombreCliente")
     , @NamedQuery(name = "Cliente.findByApellidoCliente", query = "SELECT c FROM Cliente c WHERE c.apellidoCliente = :apellidoCliente")
     , @NamedQuery(name = "Cliente.findBySexo", query = "SELECT c FROM Cliente c WHERE c.sexo = :sexo")
     , @NamedQuery(name = "Cliente.findByActivoC", query = "SELECT c FROM Cliente c WHERE c.activoC = :activoC")
-    , @NamedQuery(name = "Cliente.findByEdadCliebte", query = "SELECT c FROM Cliente c WHERE c.edadCliebte = :edadCliebte")})
+    , @NamedQuery(name = "Cliente.findByEdadCliente", query = "SELECT c FROM Cliente c WHERE c.edadCliente = :edadCliente")})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -72,15 +73,15 @@ public class Cliente implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "sexo")
-    private Character sexo;
+    private boolean sexo;
     @Basic(optional = false)
     @NotNull
     @Column(name = "activo_c")
-    private Character activoC;
+    private boolean activoC;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "edad_cliebte")
-    private short edadCliebte;
+    @Column(name = "edad_cliente")
+    private short edadCliente;
     @JoinColumn(name = "estado_civil_id_estado_civil", referencedColumnName = "id_estado_civil")
     @ManyToOne(optional = false)
     private EstadoCivil estadoCivilIdEstadoCivil;
@@ -94,7 +95,7 @@ public class Cliente implements Serializable {
         this.idCliente = idCliente;
     }
 
-    public Cliente(Short idCliente, int rut, String dv, String nombreCliente, String apellidoCliente, Character sexo, Character activoC, short edadCliebte) {
+    public Cliente(Short idCliente, int rut, String dv, String nombreCliente, String apellidoCliente, boolean sexo, boolean activoC, short edadCliente) {
         this.idCliente = idCliente;
         this.rut = rut;
         this.dv = dv;
@@ -102,7 +103,7 @@ public class Cliente implements Serializable {
         this.apellidoCliente = apellidoCliente;
         this.sexo = sexo;
         this.activoC = activoC;
-        this.edadCliebte = edadCliebte;
+        this.edadCliente = edadCliente;
     }
 
     public Short getIdCliente() {
@@ -145,28 +146,28 @@ public class Cliente implements Serializable {
         this.apellidoCliente = apellidoCliente;
     }
 
-    public Character getSexo() {
+    public boolean getSexo() {
         return sexo;
     }
 
-    public void setSexo(Character sexo) {
+    public void setSexo(boolean sexo) {
         this.sexo = sexo;
     }
 
-    public Character getActivoC() {
+    public boolean getActivoC() {
         return activoC;
     }
 
-    public void setActivoC(Character activoC) {
+    public void setActivoC(boolean activoC) {
         this.activoC = activoC;
     }
 
-    public short getEdadCliebte() {
-        return edadCliebte;
+    public short getEdadCliente() {
+        return edadCliente;
     }
 
-    public void setEdadCliebte(short edadCliebte) {
-        this.edadCliebte = edadCliebte;
+    public void setEdadCliente(short edadCliente) {
+        this.edadCliente = edadCliente;
     }
 
     public EstadoCivil getEstadoCivilIdEstadoCivil() {

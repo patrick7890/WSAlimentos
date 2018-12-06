@@ -30,9 +30,10 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
         super(Cliente.class);
     }
 
-    public Cliente findCliente(int id) {
-        Query q = em.createNamedQuery("Cliente.findByIdCliente");
-        q.setParameter("idCliente", id);
+    public Cliente findCliente(int rut,String dv) {
+        Query q = em.createNamedQuery("Cliente.findByRutDv");
+        q.setParameter("rut", rut);
+        q.setParameter("dv", dv);
         return (Cliente) q.getSingleResult();
     }
 

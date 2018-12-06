@@ -40,8 +40,8 @@ public class WSCliente {
     }
 
     @WebMethod(operationName = "findCliente")
-    public Cliente findCliente(@WebParam(name = "id") int id) {
-        return ejbRef.findCliente(id);
+    public Cliente findCliente(@WebParam(name = "rut") int rut,@WebParam(name = "dv") String dv) {
+        return ejbRef.findCliente(rut,dv);
     }
 
     @WebMethod(operationName = "findAllCliente")
