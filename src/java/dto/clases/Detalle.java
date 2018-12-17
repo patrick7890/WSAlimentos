@@ -9,18 +9,19 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Patricio
+ * @author Lennon
  */
 @Entity
 @Table(name = "detalle")
@@ -31,12 +32,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Detalle implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_detalle")
-    private Float idDetalle;
+    private Integer idDetalle;
     @JoinColumn(name = "boleta_id_boleta", referencedColumnName = "id_boleta")
     @ManyToOne(optional = false)
     private Boleta boletaIdBoleta;
@@ -47,15 +47,15 @@ public class Detalle implements Serializable {
     public Detalle() {
     }
 
-    public Detalle(Float idDetalle) {
+    public Detalle(Integer idDetalle) {
         this.idDetalle = idDetalle;
     }
 
-    public Float getIdDetalle() {
+    public Integer getIdDetalle() {
         return idDetalle;
     }
 
-    public void setIdDetalle(Float idDetalle) {
+    public void setIdDetalle(Integer idDetalle) {
         this.idDetalle = idDetalle;
     }
 

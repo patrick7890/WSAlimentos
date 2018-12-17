@@ -7,6 +7,7 @@ package service;
 
 import dto.clases.Boleta;
 import dto.facade.BoletaFacade;
+import dto.facade.VentasFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -21,6 +22,12 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(serviceName = "WSBoleta")
 public class WSBoleta {
+
+    @EJB
+    private VentasFacade ventasFacade;
+
+    @EJB
+    private BoletaFacade boletaFacade;
 
     @EJB
     private BoletaFacade ejbRef;// Add business logic below. (Right-click in editor and choose
@@ -60,6 +67,20 @@ public class WSBoleta {
     public int countBoleta() {
         return ejbRef.count();
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "CreateBoleta2")
+    public String CreateBoleta2(@WebParam(name = "idVenta") int idVenta) {
+        Boleta b = new Boleta();
+        b.setVentasIdventas(ventasFacade.findVentas(idVenta));
+        
+        boletaFacade.create(b);
+        return null;
+    }
+    
+    
 
     
 }

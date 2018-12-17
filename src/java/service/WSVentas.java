@@ -6,7 +6,9 @@
 package service;
 
 import dto.clases.Ventas;
+import dto.facade.ClienteFacade;
 import dto.facade.VentasFacade;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -20,6 +22,10 @@ import javax.jws.WebService;
 @WebService(serviceName = "WSVentas")
 public class WSVentas {
 
+    @EJB
+    private ClienteFacade clienteFacade;
+
+    
     @EJB
     private VentasFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
@@ -58,4 +64,25 @@ public class WSVentas {
     public int countVentas() {
         return ejbRef.count();
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "CrearVenta2")
+    public boolean CrearVenta2(@WebParam(name = "activo") boolean activo, @WebParam(name = "fechaE") Date fechaE, @WebParam(name = "dv") String dv,
+           @WebParam(name = "rut") int rut ) {
+        
+        Ventas v = new Ventas();
+        v.setActivoV(activo);
+        v.setFechaEntrega(fechaE);
+        v.setFechaVenta(new Date());
+        v.setClienteIdCliente(clienteFacade.findCliente(rut, dv));
+        
+        return ejbRef.create(v);
+    }
+
+    /**
+     * Web service operation
+     */
+    
 }

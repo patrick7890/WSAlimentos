@@ -47,6 +47,14 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Producto.findByTarificacion", query = "SELECT p FROM Producto p WHERE p.tarificacion = :tarificacion")})
 public class Producto implements Serializable {
 
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "tarificacion")
+    private Double tarificacion;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "stock")
+    private int stock;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoIdProducto")
     private List<Detalle> detalleList;
 
@@ -74,8 +82,6 @@ public class Producto implements Serializable {
     @Size(max = 45)
     @Column(name = "descripcion_producto")
     private String descripcionProducto;
-    @Column(name = "tarificacion")
-    private Integer tarificacion;
     @JoinColumns({
         @JoinColumn(name = "subtipo_producto_subtipo_p", referencedColumnName = "subtipo_p")
         , @JoinColumn(name = "subtipo_producto_tipo_producto_id_tp", referencedColumnName = "tipo_producto_id_tp")})
@@ -143,13 +149,6 @@ public class Producto implements Serializable {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public Integer getTarificacion() {
-        return tarificacion;
-    }
-
-    public void setTarificacion(Integer tarificacion) {
-        this.tarificacion = tarificacion;
-    }
 
     public SubtipoProducto getSubtipoProducto() {
         return subtipoProducto;
@@ -191,6 +190,22 @@ public class Producto implements Serializable {
 
     public void setDetalleList(List<Detalle> detalleList) {
         this.detalleList = detalleList;
+    }
+
+    public Double getTarificacion() {
+        return tarificacion;
+    }
+
+    public void setTarificacion(Double tarificacion) {
+        this.tarificacion = tarificacion;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
     
 }

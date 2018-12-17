@@ -6,6 +6,7 @@
 package dto.clases;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -20,6 +21,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -40,24 +43,26 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Ventas.findByFechaEntrega", query = "SELECT v FROM Ventas v WHERE v.fechaEntrega = :fechaEntrega")})
 public class Ventas implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "activo_v")
+    private boolean activoV;
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "fecha_venta")
+    @Temporal(TemporalType.DATE)
+    private Date fechaVenta;
+    @Column(name = "fecha_entrega")
+    @Temporal(TemporalType.DATE)
+    private Date fechaEntrega;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idventas")
     private Integer idventas;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "activo_v")
-    private Character activoV;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "fecha_venta")
-    private String fechaVenta;
-    @Size(max = 45)
-    @Column(name = "fecha_entrega")
-    private String fechaEntrega;
     @JoinColumn(name = "cliente_id_cliente", referencedColumnName = "id_cliente")
     @ManyToOne(optional = false)
     private Cliente clienteIdCliente;
@@ -71,7 +76,7 @@ public class Ventas implements Serializable {
         this.idventas = idventas;
     }
 
-    public Ventas(Integer idventas, Character activoV, String fechaVenta) {
+    public Ventas(Integer idventas, boolean activoV, Date fechaVenta) {
         this.idventas = idventas;
         this.activoV = activoV;
         this.fechaVenta = fechaVenta;
@@ -85,27 +90,27 @@ public class Ventas implements Serializable {
         this.idventas = idventas;
     }
 
-    public Character getActivoV() {
+    public boolean getActivoV() {
         return activoV;
     }
 
-    public void setActivoV(Character activoV) {
+    public void setActivoV(boolean activoV) {
         this.activoV = activoV;
     }
 
-    public String getFechaVenta() {
+    public Date getFechaVenta() {
         return fechaVenta;
     }
 
-    public void setFechaVenta(String fechaVenta) {
+    public void setFechaVenta(Date fechaVenta) {
         this.fechaVenta = fechaVenta;
     }
 
-    public String getFechaEntrega() {
+    public Date getFechaEntrega() {
         return fechaEntrega;
     }
 
-    public void setFechaEntrega(String fechaEntrega) {
+    public void setFechaEntrega(Date fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
 
@@ -150,5 +155,9 @@ public class Ventas implements Serializable {
     public String toString() {
         return "dto.clases.Ventas[ idventas=" + idventas + " ]";
     }
+
+    
+
+    
     
 }

@@ -45,6 +45,11 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Cliente.findByEdadCliente", query = "SELECT c FROM Cliente c WHERE c.edadCliente = :edadCliente")})
 public class Cliente implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "edad_cliente")
+    private int edadCliente;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,10 +83,6 @@ public class Cliente implements Serializable {
     @NotNull
     @Column(name = "activo_c")
     private boolean activoC;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "edad_cliente")
-    private short edadCliente;
     @JoinColumn(name = "estado_civil_id_estado_civil", referencedColumnName = "id_estado_civil")
     @ManyToOne(optional = false)
     private EstadoCivil estadoCivilIdEstadoCivil;
@@ -95,7 +96,7 @@ public class Cliente implements Serializable {
         this.idCliente = idCliente;
     }
 
-    public Cliente(Short idCliente, int rut, String dv, String nombreCliente, String apellidoCliente, boolean sexo, boolean activoC, short edadCliente) {
+    public Cliente(Short idCliente, int rut, String dv, String nombreCliente, String apellidoCliente, boolean sexo, boolean activoC, int edadCliente) {
         this.idCliente = idCliente;
         this.rut = rut;
         this.dv = dv;
@@ -162,11 +163,11 @@ public class Cliente implements Serializable {
         this.activoC = activoC;
     }
 
-    public short getEdadCliente() {
+    public int getEdadCliente() {
         return edadCliente;
     }
 
-    public void setEdadCliente(short edadCliente) {
+    public void setEdadCliente(int edadCliente) {
         this.edadCliente = edadCliente;
     }
 
@@ -211,5 +212,9 @@ public class Cliente implements Serializable {
     public String toString() {
         return "dto.clases.Cliente[ idCliente=" + idCliente + " ]";
     }
+
+   
+
+    
     
 }

@@ -5,8 +5,12 @@
  */
 package service;
 
+import dto.clases.Boleta;
 import dto.clases.Detalle;
+import dto.clases.Producto;
+import dto.facade.BoletaFacade;
 import dto.facade.DetalleFacade;
+import dto.facade.ProductoFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -21,6 +25,15 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(serviceName = "WSDetalle")
 public class WSDetalle {
+
+    @EJB
+    private DetalleFacade detalleFacade;
+
+    @EJB
+    private ProductoFacade productoFacade;
+
+    @EJB
+    private BoletaFacade boletaFacade;
 
     @EJB
     private DetalleFacade ejbRef;// Add business logic below. (Right-click in editor and choose
@@ -59,6 +72,20 @@ public class WSDetalle {
     @WebMethod(operationName = "countDetalle")
     public int countDetalle() {
         return ejbRef.count();
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "createDetalle2")
+    public boolean createDetalle2(@WebParam(name = "idProducto") int idProducto, @WebParam(name = "idBoleta") int idBoleta) {
+        
+        Detalle d = new Detalle();
+        d.setBoletaIdBoleta(boletaFacade.findBoleta(idBoleta));
+        d.setProductoIdProducto(productoFacade.findProducto(idProducto));
+        
+        return ejbRef.create(d);
+        
     }
     
 }
